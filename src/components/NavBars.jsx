@@ -1,7 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import { Navbar,Container,Nav } from 'react-bootstrap'
-//import {iconCart} from '../images/icon-cart.svg';
+import { Navbar, Container, Nav } from 'react-bootstrap'
+import {Link} from 'react-router-dom';
+import iconCart from '../images/icon-cart.svg';
+import ImageAvatar from '../images/image-avatar.png';
+
+
 
 const NavBars = () => {
   return (
@@ -12,22 +16,22 @@ const NavBars = () => {
         variant="light"
         className="fixed-top">
         <Container fluid>
-          <Navbar.Brand href="#home">Sneakers</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">Sneakers</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto my-2 my-lg-0" >
-              <Nav.Link href="#home">Collections</Nav.Link>
-              <Nav.Link href="#link">Men</Nav.Link>
-              <Nav.Link href="#link">Women</Nav.Link>
-              <Nav.Link href="#link">About</Nav.Link>
-              <Nav.Link href="#link">Contact</Nav.Link>
+              <Link to="/collections">Collections</Link>
+              <Nav.Link as={Link} to="/men">Men</Nav.Link>
+              <Nav.Link as={Link} to="/women">Women</Nav.Link>
+              <Nav.Link as={Link} to="/about">About</Nav.Link>
+              <Nav.Link as={Link} to="/contacts">Contacts</Nav.Link>
               </Nav>
               <Nav>
-            <Nav.Link href="#deets">
-                <img src="" alt="shopping cart" />
+            <Nav.Link to="/add-to-cart">
+                <img src={iconCart} alt="shopping cart" />
             </Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-            <img src="" alt="image-avatar" />
+            <Nav.Link eventKey={2} to="#memes">
+            <img className='w-25' src={ImageAvatar} alt="image-avatar" />
             </Nav.Link>
           </Nav>
           </Navbar.Collapse>
