@@ -1,11 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
+import HeroComponent from '../components/HeroComponent'
+
 
 const Home = () => {
   return (
     <>
-    <p>
-        This is the home page</p></>
+    <HeroComponent/>
+    </>
   )
 }
 

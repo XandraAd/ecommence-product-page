@@ -1,15 +1,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBars from './components/NavBars';
-import HeroSection from './components/HeroSection';
-//import './App.css'
+import Routing from './components/Routing'
+import './App.css'
 
 
 function App() {
  return (
     <>
    <NavBars/>
-   <HeroSection/>
-    </>
+   <div className=' mt-5 pt-3'>
+   <Routing/>
+   </div>
+
+   
+   </>
   )
 }
 

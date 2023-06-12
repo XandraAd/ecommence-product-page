@@ -10,17 +10,17 @@ import ImageAvatar from '../images/image-avatar.png';
 const NavBars = () => {
   return (
     <>
-     <Navbar collapseOnSelect
+     <Navbar 
+     collapseOnSelect
         expand="lg"
-        bg="light"
-        variant="light"
-        className="fixed-top">
+         variant="light"
+        className="fixed-top  navbar-section" fluid="md">
         <Container fluid>
           <Navbar.Brand as={Link} to="/">Sneakers</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto my-2 my-lg-0" >
-              <Link to="/collections">Collections</Link>
+              <Nav.Link as={Link} to="/collections">Collections</Nav.Link>
               <Nav.Link as={Link} to="/men">Men</Nav.Link>
               <Nav.Link as={Link} to="/women">Women</Nav.Link>
               <Nav.Link as={Link} to="/about">About</Nav.Link>
@@ -36,7 +36,7 @@ const NavBars = () => {
           </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar >
     </>
   )
 }

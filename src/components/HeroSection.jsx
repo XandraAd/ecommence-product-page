@@ -1,86 +1,77 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
-import{ Container, Row, Col, Figure, Card } from 'react-bootstrap';
-import Counter from './Counter';
-import ImageProductOne from '../images/image-product-1.jpg'
-import ImageProductTwo from '../images/image-product-2.jpg'
-import ImageProductThree from '../images/image-product-3.jpg'
-import ImageProductFour from '../images/image-product-4.jpg'
-import ImageProduct1 from '../images/image-product-1-thumbnail.jpg'
-import ImageProduct2 from '../images/image-product-2-thumbnail.jpg'
-import ImageProduct3 from '../images/image-product-3-thumbnail.jpg'
-import ImageProduct4 from '../images/image-product-4-thumbnail.jpg'
-
-
+import React, { useState } from "react";
+import { Container, Row, Col, Figure, Button, Image } from "react-bootstrap";
+import Counter from "./Counter";
+import ImageProductOne from "../images/image-product-1.jpg";
+import ImageProductTwo from "../images/image-product-2.jpg";
+import ImageProductThree from "../images/image-product-3.jpg";
+import ImageProductFour from "../images/image-product-4.jpg";
+import ImageProduct1 from "../images/image-product-1-thumbnail.jpg";
+import ImageProduct2 from "../images/image-product-2-thumbnail.jpg";
+import ImageProduct3 from "../images/image-product-3-thumbnail.jpg";
+import ImageProduct4 from "../images/image-product-4-thumbnail.jpg";
 
 const HeroSection = () => {
-     const [displayedImage, setDisplayedImage] = useState('');
-      
-        const handleClick = (image) => {
-          setDisplayedImage(image);
-        };
+  const [displayedImage, setDisplayedImage] = useState("");
+
+  const thumbnails = [
+    { src: ImageProduct1, alt: "Thumbnail 1", mainImage: ImageProductOne },
+    { src: ImageProduct2, alt: "Thumbnail 2", mainImage: ImageProductTwo },
+    { src: ImageProduct3, alt: "Thumbnail 3", mainImage: ImageProductThree },
+    { src: ImageProduct4, alt: "Thumbnail 4", mainImage: ImageProductFour }
+  ];
+
+  const handleClick = (image) => {
+    setDisplayedImage(image);
+  };
 
   return (
     <>
-   <Container className='d-flex flex-column justify-content-center' style={{minHeight:'150vh'}}>
-      <Row>
-        <Col md={6}>
-            <Card >
-            <Card.Img variant="top" src={displayedImage||ImageProductOne} />
-            </Card>
-            <br />
-            <Figure className='d-flex gap-4 gap-lg-3'>
-      <Figure.Image
-        width={100}
-        height={70}
-        alt="Thumbnail 1"
-                src={ImageProduct1}
-                onClick={() => handleClick(ImageProductOne)}
-      />
-      <Figure.Image
-        width={100}
-        height={70}
-        alt="Thumbnail 2"
-        src={ImageProduct2}
-        onClick={() => handleClick(ImageProductTwo)}
-      />
-      <Figure.Image
-        width={100}
-        height={70}
-        alt="Thumbnail 3"
-        src={ImageProduct3}
-        onClick={() => handleClick(ImageProductThree)}
-      />
-      <Figure.Image
-        width={100}
-        height={70}
-        alt="Thumbnail 4"
-        src={ImageProduct4}
-        onClick={() => handleClick(ImageProductFour)}
-      />
-      </Figure>
-      </Col>
-        
-        <Col md={6}>
-    <Card style={{ width: '30rem', height:'92vh'}}>
-      <Card.Body>
-        <Card.Title className="text-uppercase f-10px">Sneaker Company</Card.Title>
+      <Container style={{ maxWidth: 1080 }}>
+        <Row className="border">
+          <Col md={6}>
+            <Image
+              variant="top"
+              src={displayedImage || ImageProductOne}
+              style={{ width: "40vw" }}
+              className="rounded-5"
+            />
 
-        <Card.Subtitle className="text-bold fw-20 mb-1 "><b>Fall Limited <br />Sneakers</b></Card.Subtitle>
-        <Card.Text className="mt-5">
-        These low-profile sneakers are your perfect casual wear companion.Featuring a durable rubber outer sole, theyll withstand everything the weather can offer.
-        <br />
-        <br />
-        </Card.Text>
-        <Card.Text> $120</Card.Text>
-        <Counter/>
-      </Card.Body>
-    </Card>
-</Col>
-      </Row>
+            <br />
+            <Figure className="d-flex gap-4 gap-lg-3 mt-5">
+              {thumbnails.map((thumbnail, index) => (
+                <Figure.Image
+                  key={index}
+                  className="rounded-4"
+                  width={95}
+                  alt={thumbnail.alt}
+                  src={thumbnail.src}
+                  onClick={() => handleClick(thumbnail.mainImage)}
+                />
+              ))}
+            </Figure>
+          </Col>
+
+          <Col md={6} className="p-5">
+            <small className='fs-5 fw-bold' style={{color:'orange'}}>Sneaker Company</small>
+            <p className="fs-1 fw-bold">
+              Fall Limited <br /> Sneakers
+            </p>
+            <p>
+              These low-profile sneakers are your perfect casual wear
+              companion.Featuring a durable rubber outer sole, theyll withstand
+              everything the weather can offer.
+            </p>
+            <br />
+            <h4 className="fw-bold">$120</h4>
+            <Button variant='secondary' style={{}}>50%</Button>
+            <Counter className='m-5'/>
+          </Col>
+        </Row>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;
+
