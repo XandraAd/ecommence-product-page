@@ -8,7 +8,9 @@
 }
 
 .navbar-section {
-background-color:hsl(25, 100%, 94%);
+  height: 10vh;
+  background: "transparent";
+
 }
 
 .herocomponent-main,  .brandImg{
@@ -28,6 +30,15 @@ Figure.Image:hover {
   width: 500px;
   display: grid;
   grid-template-columns: repeat(3,1fr);
+}
+
+div.carouselcaption .itemCaption{
+  color: hsl(26, 100%, 55%);
+}
+
+
+div.carouselcaption .itemDesc {
+  color: black;
 }
 
 

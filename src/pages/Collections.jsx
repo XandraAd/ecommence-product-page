@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
-import HeroSection from '../components/HeroSection';
+import React from "react";
+import HeroSection from "../components/HeroSection";
 
 const Collections = () => {
   return (
     <>
-    <HeroSection/>
+      <HeroSection />
     </>
-  )
-}
+  );
+};
 
-export default Collections
+export default Collections;
