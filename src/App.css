@@ -7,6 +7,62 @@
   font-family: 'Kumbh Sans', sans-serif !important;
 }
 
+:root {
+  --text-orange: hsl(26, 100%, 55%);
+  --bg-orange-50: hsl(25, 100%, 94%);
+  --text-white-90: hsl(223, 64%, 98%);
+  --text-grey-30: hsl(220, 14%, 75%);
+  --text-grey-50: hsl(219, 9%, 45%);
+  --text-black-90: hsl(220, 13%, 13%);
+  --text-black: rgb(0, 0, 0);
+  
+}
+
+.text-orange {
+  color: var(--text-orange);
+}
+
+.bg-orange-50 {
+  background-color: var(--bg-orange-50);
+}
+
+.bg-orange {
+  background-color: var(--text-orange)
+}
+
+.text-white-90 {
+  color: var(--text-white-90);
+}
+
+.text-grey-30 {
+  color: var(--text-grey-30);
+}
+
+.text-grey-50 {
+  color: var(--text-grey-50);
+}
+
+.text-black-90 {
+  color: var(--text-black-90);
+}
+
+.navbar-toggler, .navbar-toggler:focus{
+  border: transparent!important;
+  outline: transparent !important;
+  box-shadow : none !important;
+}
+
+.navbar-toggler-icon {
+  background: url('./assets/menu.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--bg-orange-50);
+}
+
 .navbar-section {
   height: 10vh;
   background: "transparent";
@@ -14,7 +70,7 @@
 }
 
 .herocomponent-main,  .brandImg{
-  border: 5px solid hsl(26, 100%, 55%);
+  border: 5px solid var(--text-orange);
 }
 
 Figure.Image:hover {
@@ -23,7 +79,7 @@ Figure.Image:hover {
 }
 
 .brands_container {
-  background-color:hsl(25, 100%, 94%) ;
+  background-color:var(--bg-orange-50);
 }
 
 .featuredSneakers {
@@ -33,12 +89,12 @@ Figure.Image:hover {
 }
 
 div.carouselcaption .itemCaption{
-  color: hsl(26, 100%, 55%);
+  color: var(--text-orange);
 }
 
 
 div.carouselcaption .itemDesc {
-  color: black;
+  color: var(--text-black);
 }
 
 
@@ -47,40 +103,3 @@ div.carouselcaption .itemDesc {
 
 
 
-
-/*- Mobile: 375px
-- Desktop: 1440px
-
-## Colors
-
-### Primary
-
-- Orange: hsl(26, 100%, 55%)
-- Pale orange: hsl(25, 100%, 94%)
-
-### Neutral
-
-- Very dark blue: hsl(220, 13%, 13%)
-- Dark grayish blue: hsl(219, 9%, 45%)
-- Grayish blue: hsl(220, 14%, 75%)
-- Light grayish blue: hsl(223, 64%, 98%)
-- White: hsl(0, 0%, 100%)
-- Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
-
-## Typography
-
-### Body Copy
-
-- Font size (paragraph): 16px
-
-### Font
-
-- Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
-- Weights: 400, 700
-
-
-
-@media screen and (min-width: 375px) {
-  
-  
-}*/
